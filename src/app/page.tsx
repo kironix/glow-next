@@ -1,0 +1,25 @@
+import { buttonVariants } from "@/components/ui/button";
+import { Config } from "@/config";
+import Link from "next/link";
+
+export default function Page() {
+  return (
+    <div className="flex h-screen flex-col items-center justify-center space-y-4">
+      <h1 className="text-4xl font-bold">{Config.title}</h1>
+      <p className="text-balance text-center">{Config.description}</p>
+      <div className="flex space-x-2">
+        <Link href="#" className={buttonVariants({ variant: "outline" })}>
+          Learn More
+        </Link>
+        <a
+          href="https://github.com/kironix/glow-next"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonVariants({ variant: "default" })}
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  );
+}
