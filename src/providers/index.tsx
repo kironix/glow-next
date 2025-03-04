@@ -8,12 +8,15 @@ export default function Providers({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <ThemeProvider attribute="class" defaultTheme="dark">
-        <main>{children}</main>
-        <Toaster />
-        <NextTopLoader />
-      </ThemeProvider>
-    </>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <main>{children}</main>
+      <Toaster />
+      <NextTopLoader />
+    </ThemeProvider>
   );
 }

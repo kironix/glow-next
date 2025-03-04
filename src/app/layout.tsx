@@ -6,7 +6,7 @@ import { JetBrains_Mono } from "next/font/google";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
-import "./globals.css";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
