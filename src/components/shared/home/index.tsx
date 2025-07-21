@@ -1,17 +1,28 @@
-import ToggleTheme from "@/components/toggle-theme";
-import { buttonVariants } from "@/components/ui/button";
-import { Config } from "@/config";
-import Link from "next/link";
+"use client"
 
-export default function Home() {
+import { Config } from "@/config"
+
+import { toast } from "@/hooks/use-toast"
+import { Button, buttonVariants } from "@/components/ui/button"
+import { ThemeSwitcher } from "@/components/theme-switcher"
+
+export function Home() {
   return (
     <div className="relative flex h-screen flex-col items-center justify-center space-y-4">
       <h1 className="text-4xl font-bold">{Config.title}</h1>
       <p className="text-center text-balance">{Config.description}</p>
       <div className="flex space-x-2">
-        <Link href="#" className={buttonVariants({ variant: "outline" })}>
-          Learn More
-        </Link>
+        <Button
+          variant="outline"
+          onClick={() =>
+            toast({
+              title: "Success",
+              description: "Hello World..!",
+            })
+          }
+        >
+          Click Me
+        </Button>
         <a
           href="https://github.com/kironix/glow-next"
           target="_blank"
@@ -21,9 +32,9 @@ export default function Home() {
           Get Started
         </a>
       </div>
-      <div className="absolute top-4 right-4">
-        <ToggleTheme />
+      <div className="absolute top-3 right-3">
+        <ThemeSwitcher />
       </div>
     </div>
-  );
+  )
 }
